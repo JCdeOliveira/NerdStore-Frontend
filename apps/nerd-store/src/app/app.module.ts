@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import { UiModule } from '@silent-jayh/ui';
 
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
@@ -16,7 +17,7 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [AppComponent, NxWelcomeComponent, HomePageComponent, ProductListComponent, HeaderComponent, FooterComponent],
-    imports: [BrowserModule, RouterModule.forRoot(routes)],
+    imports: [BrowserModule, RouterModule.forRoot(routes), UiModule],
     providers: [],
     bootstrap: [AppComponent]
 })

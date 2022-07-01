@@ -14,7 +14,12 @@
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
-        "paths": {}
+        "paths": {
+            "@silent-jayh/orders": ["libs/orders/src/index.ts"],
+            "@silent-jayh/products": ["libs/products/src/index.ts"],
+            "@silent-jayh/ui": ["libs/ui/src/index.ts"],
+            "@silent-jayh/users": ["libs/users/src/index.ts"]
+        }
     },
     "exclude": ["node_modules", "tmp"]
 }

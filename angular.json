@@ -5,6 +5,10 @@
         "admin": "apps/admin",
         "admin-e2e": "apps/admin-e2e",
         "nerd-store": "apps/nerd-store",
-        "nerd-store-e2e": "apps/nerd-store-e2e"
+        "nerd-store-e2e": "apps/nerd-store-e2e",
+        "orders": "libs/orders",
+        "products": "libs/products",
+        "ui": "libs/ui",
+        "users": "libs/users"
     }
 }
