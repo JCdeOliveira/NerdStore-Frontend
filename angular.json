@@ -1,8 +1,10 @@
 {
-  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
-  "version": 2,
-  "projects": {
-    "nerd-store": "apps/nerd-store",
-    "nerd-store-e2e": "apps/nerd-store-e2e"
-  }
+    "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+    "version": 2,
+    "projects": {
+        "admin": "apps/admin",
+        "admin-e2e": "apps/admin-e2e",
+        "nerd-store": "apps/nerd-store",
+        "nerd-store-e2e": "apps/nerd-store-e2e"
+    }
 }
