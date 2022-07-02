@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'silent-jayh-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'nerdstore-root',
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'nerd-store';
