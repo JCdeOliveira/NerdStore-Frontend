@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriesService, Category } from '@silent-jayh/products';
+import { MessageService } from 'primeng/api';
 
 @Component({
     selector: 'admin-categories-list',
@@ -8,7 +9,7 @@ import { CategoriesService, Category } from '@silent-jayh/products';
 export class CategoriesListComponent implements OnInit {
     categories: Category[] = [];
 
-    constructor(private categoriesService: CategoriesService) {}
+    constructor(private categoriesService: CategoriesService, private messageService: MessageService) {}
 
     ngOnInit(): void {
         this.categoriesService.getCategories().subscribe((cats) => {
