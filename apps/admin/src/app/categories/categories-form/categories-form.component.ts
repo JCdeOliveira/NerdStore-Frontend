@@ -21,14 +21,18 @@ export class CategoriesFormComponent implements OnInit {
         private messageService: MessageService,
         private formBuilder: FormBuilder,
         private categoriesService: CategoriesService,
-        private location: Location
+        private location: Location,
+        private route: ActivatedRoute
     ) {}
 
     ngOnInit(): void {
         this.form = this.formBuilder.group({
             name: ['', Validators.required],
-            icon: ['', Validators.required]
+            icon: ['', Validators.required],
+            color: ['#fff', Validators.required]
         });
+
+        this._checkEditMode();
     }
 
     onSubmit() {
@@ -37,9 +41,19 @@ export class CategoriesFormComponent implements OnInit {
             return;
         }
         const category: Category = {
+            id: this.currentCategoryId,
             name: this.categoryForm.name.value,
-            icon: this.categoryForm.icon.value
+            icon: this.categoryForm.icon.value,
+            color: this.categoryForm.color.value
         };
+        if (this.editmode) {
+            this._updateCategory(category);
+        } else {
+            this._addCategory(category);
+        }
+    }
+
+    private _addCategory(category: Category) {
         this.categoriesService.createCategory(category).subscribe(
             (response) => {
                 this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Category was created' });
@@ -53,6 +67,36 @@ export class CategoriesFormComponent implements OnInit {
                 this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Category was NOT created' });
             }
         );
+    }
+
+    private _updateCategory(category: Category) {
+        this.categoriesService.updateCategory(category).subscribe(
+            (response) => {
+                this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Category was updated' });
+                timer(2000)
+                    .toPromise()
+                    .then((done) => {
+                        this.location.back();
+                    });
+            },
+            (error) => {
+                this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Category was NOT updated' });
+            }
+        );
+    }
+
+    private _checkEditMode() {
+        this.route.params.subscribe((params) => {
+            if (params.id) {
+                this.editmode = true;
+                this.currentCategoryId = params.id;
+                this.categoriesService.getCategory(params.id).subscribe((category) => {
+                    this.categoryForm.name.setValue(category.name);
+                    this.categoryForm.icon.setValue(category.icon);
+                    this.categoryForm.color.setValue(category.color);
+                });
+            }
+        });
     }
 
     get categoryForm() {

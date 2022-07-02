@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -12,6 +12,8 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ColorPickerModule } from 'primeng/colorpicker';
 
 import { AppComponent } from './app.component';
 import { ShellComponent } from './shared/shell/shell.component';
@@ -21,7 +23,7 @@ import { CategoriesListComponent } from './categories/categories-list/categories
 import { CategoriesService } from '@silent-jayh/products';
 import { CategoriesFormComponent } from './categories/categories-form/categories-form.component';
 
-const UX_MODULE = [ButtonModule, CardModule, ToolbarModule, TableModule, InputTextModule, ToastModule];
+const UX_MODULE = [ButtonModule, CardModule, ToolbarModule, TableModule, InputTextModule, ToastModule, ConfirmDialogModule, ColorPickerModule];
 
 const routes: Routes = [
     {
@@ -39,6 +41,10 @@ const routes: Routes = [
             {
                 path: 'categories/form',
                 component: CategoriesFormComponent
+            },
+            {
+                path: 'categories/form/:id',
+                component: CategoriesFormComponent
             }
         ]
     }
@@ -55,7 +61,7 @@ const routes: Routes = [
         RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
         ...UX_MODULE
     ],
-    providers: [CategoriesService, MessageService],
+    providers: [CategoriesService, MessageService, ConfirmationService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
