@@ -19,9 +19,9 @@ import { AppComponent } from './app.component';
 import { ShellComponent } from './shared/shell/shell.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { CategoriesListComponent } from './categories/categories-list/categories-list.component';
+import { CategoriesListComponent } from './pages/categories/categories-list/categories-list.component';
+import { CategoriesFormComponent } from './pages/categories/categories-form/categories-form.component';
 import { CategoriesService } from '@silent-jayh/products';
-import { CategoriesFormComponent } from './categories/categories-form/categories-form.component';
 
 const UX_MODULE = [ButtonModule, CardModule, ToolbarModule, TableModule, InputTextModule, ToastModule, ConfirmDialogModule, ColorPickerModule];
 

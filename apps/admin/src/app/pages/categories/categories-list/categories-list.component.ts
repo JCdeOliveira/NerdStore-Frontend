@@ -28,16 +28,15 @@ export class CategoriesListComponent implements OnInit {
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
                 this.categoriesService.deleteCategory(categoryId).subscribe(
-                    (response) => {
+                    () => {
                         this._getCategories();
                         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Category was deleted' });
                     },
-                    (error) => {
+                    () => {
                         this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Category was NOT deleted' });
                     }
                 );
-            },
-            reject: (type) => {}
+            }
         });
     }
 
