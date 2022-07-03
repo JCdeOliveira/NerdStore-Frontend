@@ -1,6 +1,6 @@
 <p-toast></p-toast>
 <div class="admin-page">
-    <p-card header="Categories" subheader="List of all categories">
+    <p-card header="Users" subheader="List of all users">
         <div class="grid">
             <div class="col-12">
                 <p-toolbar>
@@ -12,23 +12,28 @@
         </div>
         <div class="grid">
             <div class="col-12">
-                <p-table [value]="categories" styleClass="p-datatable-gridlines">
+                <p-table [value]="users" styleClass="p-datatable-gridlines">
                     <ng-template pTemplate="header">
                         <tr>
                             <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-                            <th>Icon</th>
-                            <th>Color</th>
+                            <th>Email</th>
+                            <th>Is Admin</th>
+                            <th>Country</th>
                             <th></th>
                         </tr>
                     </ng-template>
-                    <ng-template pTemplate="body" let-category>
+                    <ng-template pTemplate="body" let-user>
                         <tr>
-                            <td>{{ category.name }}</td>
-                            <td><i style="font-size: 2rem" class="pi" [ngClass]="'pi-' + category.icon"></i></td>
-                            <td><i class="pi pi-circle-on" style="font-size: 2rem" [ngStyle]="{ color: category.color }"></i></td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.email }}</td>
                             <td>
-                                <p-button (click)="updateCategory(category.id)" styleClass="p-button-success mr-2" icon="pi pi-pencil"></p-button>
-                                <p-button (click)="deleteCategory(category.id)" styleClass="p-button-danger" icon="pi pi-trash"></p-button>
+                                <p-tag *ngIf="user.isAdmin" icon="pi pi-check" severity="success" [rounded]="true"></p-tag>
+                                <p-tag *ngIf="!user.isAdmin" icon="pi pi-times" severity="danger" [rounded]="true"></p-tag>
+                            </td>
+                            <td>{{ getCountryName(user.country) }}</td>
+                            <td>
+                                <p-button (click)="updateUser(user.id)" styleClass="p-button-success mr-2" icon="pi pi-pencil"></p-button>
+                                <p-button (click)="deleteUser(user.id)" styleClass="p-button-danger" icon="pi pi-trash"></p-button>
                             </td>
                         </tr>
                     </ng-template>
