@@ -23,6 +23,8 @@ import { TagModule } from 'primeng/tag';
 import { InputMaskModule } from 'primeng/inputmask';
 import { FieldsetModule } from 'primeng/fieldset';
 
+import { UsersModule } from '@silent-jayh/users';
+
 import { AppComponent } from './app.component';
 import { ShellComponent } from './shared/shell/shell.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -134,6 +136,7 @@ const routes: Routes = [
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
+        UsersModule,
         RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
         ...UX_MODULE
     ],
