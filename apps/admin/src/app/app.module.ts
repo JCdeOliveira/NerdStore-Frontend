@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { AuthGuard, JwtInterceptor, UsersModule } from '@silent-jayh/users';
 
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -22,8 +22,7 @@ import { EditorModule } from 'primeng/editor';
 import { TagModule } from 'primeng/tag';
 import { InputMaskModule } from 'primeng/inputmask';
 import { FieldsetModule } from 'primeng/fieldset';
-
-import { AuthGuard, JwtInterceptor, UsersModule } from '@silent-jayh/users';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 import { AppComponent } from './app.component';
 import { ShellComponent } from './shared/shell/shell.component';
@@ -65,7 +64,7 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         children: [
             {
-                path: 'dashboard',
+                path: '',
                 component: DashboardComponent
             },
             {
@@ -111,6 +110,11 @@ const routes: Routes = [
             {
                 path: 'orders/:id',
                 component: OrdersDetailsComponent
+            },
+            {
+                path: '**',
+                redirectTo: '',
+                pathMatch: 'full'
             }
         ]
     }

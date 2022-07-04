@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
 import { UiModule } from '@silent-jayh/ui';
+import { ProductsModule } from '@silent-jayh/products';
 
 import { AccordionModule } from 'primeng/accordion';
 
@@ -11,6 +12,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { NavComponent } from './shared/nav/nav.component';
 
 const routes: Routes = [
     { path: '', component: HomePageComponent },
@@ -18,8 +20,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [AppComponent, HomePageComponent, ProductListComponent, HeaderComponent, FooterComponent],
-    imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes), UiModule, AccordionModule],
+    declarations: [AppComponent, HomePageComponent, ProductListComponent, HeaderComponent, FooterComponent, NavComponent],
+    imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes), UiModule, ProductsModule, AccordionModule],
     providers: [],
     bootstrap: [AppComponent]
 })
