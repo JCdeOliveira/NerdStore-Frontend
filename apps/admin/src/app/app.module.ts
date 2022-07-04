@@ -23,7 +23,7 @@ import { TagModule } from 'primeng/tag';
 import { InputMaskModule } from 'primeng/inputmask';
 import { FieldsetModule } from 'primeng/fieldset';
 
-import { UsersModule } from '@silent-jayh/users';
+import { AuthGuard, UsersModule } from '@silent-jayh/users';
 
 import { AppComponent } from './app.component';
 import { ShellComponent } from './shared/shell/shell.component';
@@ -62,6 +62,7 @@ const routes: Routes = [
     {
         path: '',
         component: ShellComponent,
+        canActivate: [AuthGuard],
         children: [
             {
                 path: 'dashboard',
