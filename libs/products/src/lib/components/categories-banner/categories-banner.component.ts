@@ -10,16 +10,16 @@ import { CategoriesService } from '../../services/categories.service';
 export class CategoriesBannerComponent implements OnInit {
     categories: Category[] = [];
 
-    constructor() {}
-    // private categoriesService: CategoriesService
+    constructor(private categoriesService: CategoriesService) {}
+
 
     ngOnInit(): void {
-        // this.getCategories();
+        this.getCategories();
     }
 
-    // getCategories() {
-    //     this.categoriesService.getCategories().subscribe((categories) => {
-    //         this.categories = categories;
-    //     });
-    // }
+    getCategories() {
+        this.categoriesService.getCategories().subscribe((categories) => {
+            this.categories = categories;
+        });
+    }
 }

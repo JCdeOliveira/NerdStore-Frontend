@@ -1,18 +1,28 @@
 footer {
-  min-height: 50px;
-  padding: 10px 25px;
-  width: 100%;
-  margin-top: 25px;
+    min-height: 50px;
+    padding: 10px 25px;
+    width: 100%;
+    margin-top: 25px;
+    color: var(--primary-400);
 
-  .footer-wrapper {
-    align-items: center;
+    .footer-wrapper {
+        align-items: center;
 
-    .social {
-      margin-top: 15px;
-      text-align: right;
-      .nav {
-        justify-content: flex-end;
-      }
+        .social {
+            margin-top: 15px;
+            text-align: right;
+
+            .nav {
+                justify-content: flex-end;
+
+                &-link {
+                  color: var(--primary-400);
+
+                  &:hover {
+                    color: $primary-color;
+                  }
+                }
+            }
+        }
     }
-  }
 }

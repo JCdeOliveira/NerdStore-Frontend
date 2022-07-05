@@ -7,19 +7,36 @@ header {
         }
     }
 
-    .search,
     .navigation,
     .tools {
-        padding-top: 35px;
+        padding-top: 50px;
     }
 
     .search {
-        padding-top: 25px;
+        padding-top: 45px;
+    }
+
+    .navigation {
+      font-size: 1.2em;
     }
 
     .tools {
         .pi {
             margin-right: 15px;
+            font-size: 1.4em;
+            color: var(--primary-400);
+        }
+    }
+
+    .button {
+        &-profile:hover {
+            color: $primary-color;
+            cursor: pointer;
+        }
+
+        &-cart:hover {
+            color: $primary-color;
+            cursor: pointer;
         }
     }
 }

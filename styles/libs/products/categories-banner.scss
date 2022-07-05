@@ -3,7 +3,8 @@
 
     h3 {
         margin-bottom: 20px;
-        color: var(--surface-700);
+        color: var(--primary-400);
+        font-size: 2em;
     }
 
     .category {
@@ -14,17 +15,19 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-        background-color: aqua;
+        cursor: pointer;
 
         &-icon {
-          .pi {
-            font-size: 2em;
-            margin-bottom: 10px;
-          }
+            .pi {
+                font-size: 2em;
+                margin-bottom: 10px;
+                color: var(--surface-0);
+            }
         }
 
         &-name {
-          font-size: 1.2em;
+            font-size: 1.2em;
+            color: var(--surface-0);
         }
     }
 }
