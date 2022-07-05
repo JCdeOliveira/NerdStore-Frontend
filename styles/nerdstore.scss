@@ -28,6 +28,11 @@
 @import './libs/orders/orders.scss';
 @import './libs/users/users.scss';
 
+body {
+  background-color: var(--primary-900);
+}
+
+
 .container {
     width: 1200px;
     padding: 15px;

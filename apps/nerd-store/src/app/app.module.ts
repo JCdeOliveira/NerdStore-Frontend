@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { UiModule } from '@silent-jayh/ui';
 import { ProductsModule } from '@silent-jayh/products';
 
