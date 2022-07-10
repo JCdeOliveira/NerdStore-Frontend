@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { OrdersModule } from '@silent-jayh/orders';
 import { FormsModule } from '@angular/forms';
+import { UiModule } from '@silent-jayh/ui';
 
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -32,7 +33,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [CommonModule, RouterModule.forChild(routes), OrdersModule, FormsModule, ButtonModule, CheckboxModule, RatingModule, InputNumberModule],
+    imports: [CommonModule, RouterModule.forChild(routes), OrdersModule, FormsModule, ButtonModule, CheckboxModule, RatingModule, InputNumberModule, UiModule],
     declarations: [
         ProductsSearchComponent,
         CategoriesBannerComponent,

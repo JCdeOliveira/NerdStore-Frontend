@@ -16,8 +16,8 @@ export class ProductPageComponent implements OnInit {
 
     ngOnInit(): void {
         this.route.params.subscribe((params) => {
-            if (params['productid']) {
-                this._getProduct(params['productid']);
+            if (params.productid) {
+                this._getProduct(params.productid);
             }
         });
     }
