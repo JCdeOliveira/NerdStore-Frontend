@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartItem, CartService } from '@silent-jayh/orders';
 import { Product } from '../../models/product';
 import { ProductsService } from '../../services/products.service';
 
@@ -10,9 +11,9 @@ import { ProductsService } from '../../services/products.service';
 })
 export class ProductPageComponent implements OnInit {
     product!: Product;
-    quantity!: number;
+    quantity = 1;
 
-    constructor(private productService: ProductsService, private route: ActivatedRoute) {}
+    constructor(private productService: ProductsService, private cartService: CartService, private route: ActivatedRoute) {}
 
     ngOnInit(): void {
         this.route.params.subscribe((params) => {
@@ -22,7 +23,14 @@ export class ProductPageComponent implements OnInit {
         });
     }
 
-    addProductToCart() {}
+    addProductToCart() {
+        const cartItem: CartItem = {
+            productId: this.product.id,
+            quantity: this.quantity
+        };
+
+        this.cartService.setCartItem(cartItem);
+    }
 
     private _getProduct(id: string) {
         this.productService.getProduct(id).subscribe((resProduct) => {
