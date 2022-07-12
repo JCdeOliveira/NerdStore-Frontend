@@ -1,42 +1,24 @@
 header {
-    margin-bottom: 30px;
-
+    margin-bottom: 25px;
     .logo {
         img {
             width: 160px;
         }
     }
 
-    .navigation,
-    .tools {
-        padding-top: 50px;
-    }
-
     .search {
-        padding-top: 45px;
+        padding-top: 25px;
     }
 
     .navigation {
-      font-size: 1.2em;
+        padding-top: 25px;
     }
 
     .tools {
+        padding-top: 38px;
+
         .pi {
-            margin-right: 15px;
-            font-size: 1.4em;
-            color: var(--primary-400);
-        }
-    }
-
-    .button {
-        &-profile:hover {
-            color: $primary-color;
-            cursor: pointer;
-        }
-
-        &-cart:hover {
-            color: $primary-color;
-            cursor: pointer;
+            margin-right: 10px;
         }
     }
 }
