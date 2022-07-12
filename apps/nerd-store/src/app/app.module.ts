@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { UiModule } from '@silent-jayh/ui';
 import { ProductsModule } from '@silent-jayh/products';
+import { OrdersModule } from '@silent-jayh/orders';
 
 import { AccordionModule } from 'primeng/accordion';
 
@@ -20,7 +21,7 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [AppComponent, HomePageComponent, HeaderComponent, FooterComponent, NavComponent],
-    imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes), UiModule, ProductsModule, AccordionModule, HttpClientModule],
+    imports: [BrowserModule, BrowserAnimationsModule, RouterModule.forRoot(routes), UiModule, OrdersModule, ProductsModule, AccordionModule, HttpClientModule],
     providers: [],
     bootstrap: [AppComponent]
 })
